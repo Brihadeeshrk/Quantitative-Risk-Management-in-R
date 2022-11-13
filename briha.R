@@ -171,5 +171,5 @@ maturity <- c(0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3,
 
 # Plot the yield curve for the first day of zcb
 plot(maturity, zcb[1, ], ylim = range(zcb), type = "l", ylab = "yield (%)", col = "red")
-# Add a line for the last day of zcb
+# Add a line for the last day of ZCB
 lines(maturity, zcb[nrow(zcb), ])
