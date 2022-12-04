@@ -33,3 +33,11 @@ dj0809 <- DJ["2008/2009"]
 ftse0809 <- FTSE["2008/2009"]
 plot(dj0809)
 plot(ftse0809)
+
+data("DJ_const")
+
+head(DJ_const)
+which(is.na(DJ_const))
+sum(which(is.na(DJ_const)))
+plot.zoo((DJ_const), plot.type = "single", col=c(1,2,3,4))
+legend(julian(x = as.Date("2009-01-01")), y = 70, legend = names(DJ_const)[1:4], fill = 1:4)
