@@ -80,7 +80,6 @@ eps.variances <- diag(var(eps))
 sort(eps.variances)
 
 ## Use generalized least squares to obtain better estimates
-## See documentation of lm for more details
 mod2 <- lm(t(X) ~ X.sectors -1, weights = 1/eps.variances)
 coef.mat <- t(coef(mod2))
 dimnames(coef.mat)[[2]] <- levels(X.sectors)
@@ -88,6 +87,7 @@ dimnames(coef.mat)[[2]] <- levels(X.sectors)
 F <- xts(standardize(coef.mat),time(X))
 var(F)
 plot.zoo(F,type="h")
+help("glm")
 
 ## Construct the systematic terms for each sector
 A <- model.matrix(mod2)

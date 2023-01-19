@@ -3,7 +3,8 @@ install.packages('QRM')
 library(qrmtools)
 library(xts)
 library(QRM)
-
+data("FTSE")
+data("SP500")
 data("SMI")
 data("USD_GBP")
 data("CHF_GBP")
@@ -13,7 +14,7 @@ X.SSMI <- SMI["2008/2009"]
 USD.GBP <- USD_GBP["2008/2009"]
 CHF.GBP <- CHF_GBP["2008/2009"]
 riskfactors <- merge(X.FTSE,  X.GSPC, X.SSMI, USD.GBP, CHF.GBP , all = TRUE)
-riskfactors <- na.omitmit(riskfactors)
+riskfactors <- na.omit(riskfactors)
 # Plot the risk-factor data
 plot.zoo(riskfactors)
 
